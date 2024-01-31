@@ -12,9 +12,9 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
 
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-south-1 # e.g., us-west-2
+          aws-access-key-id: ${{ secret.secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secret.secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS-region: ap-south-1 # e.g., us-west-2
 
       - name: Stop EC2 instance
         run: aws ec2 stop-instances --instance-ids i-06b298be9ed00ddb8
