@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up secret file
-        run: |
-          cat ${{secrets.AWS_MYNAME}}
+        run: echo ${{secrets.AWS_MYNAME}}
       - name: Configure AWS credentials
         #uses: aws-actions/configure-aws-credentials@v1
         uses: aws-actions/configure-aws-credentials@v3
