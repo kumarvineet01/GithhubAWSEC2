@@ -15,7 +15,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS-region: ap-south-1 # e.g., us-west-2
+          #AWS-region: ap-south-1 # e.g., us-west-2
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Stop EC2 instance
-        run: aws ec2 start-instances --instance-ids i-06b298be9ed00ddb8
+        run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_EC2_INSTANCE_ID }}
